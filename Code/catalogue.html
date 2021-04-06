@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/headerHomepage.css" />
+    <link rel="stylesheet" href="./css/recipeList.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <title>Calorie Rocket: Catalogue</title>
+</head>
+<body>
+    <div class="content">
+    
+        <header>
+            <div class="content-wrapper logo">
+                <picture><img src="./img/Logo_words_black.png" alt="My logo" /></picture>
+                <nav>
+                  <div class="hamburger">
+                      <a href="./index.html">
+                    <img src="./img/hamburger-svgrepo-com.svg" alt="menu">
+                    </a>
+                  </div>
+                  <ul>
+                    <div>
+                      <li><a href="./index.html">Home</a></li>
+                      <li><a href="./catalogue.html">Catalogue</a></li>
+                    </div>
+                  </ul>
+                </nav>
+              </div>
+        </header>
+
+        <section class="content-wrapper searchBox">
+
+            <h2>Find your next meal!</h2>
+
+            <form action="" method="GET" id="catalogueForm">
+
+                <h3>Dietary Preferences?</h3>
+
+                    <label for="vegetarian">Vegetarian</label>
+                    <input type="checkbox" name="vegetarian" id="vegetarian" value="Vegetarian"> <br>
+                    
+                    <label for="vegan">Vegan</label>
+                    <input type="checkbox" name="vegan" id="vegan" value="Vegan"> <br>
+                    
+                <h3>Max. Cooking Time</h3>
+
+
+                    <input type="radio" id="maxCook" name="maxCook" value="max30">
+                    <label for="maxCook">30 minutes</label>
+
+                    <input type="radio" id="maxCook" name="maxCook" value="max60">
+                    <label for="maxCook">60 minutes</label>
+
+                    <input type="radio" id="maxCook" name="maxCook" value="max90">
+                    <label for="maxCook">90 minutes</label>
+
+                    <input type="radio" id="maxCook" name="maxCook" value="max120">
+                    <label for="maxCook">120 minutes</label>
+                    
+
+                <h3>Serves</h3>
+
+                <!-- <label for="serves">Serves</label> -->
+                <input type="range" id="serves" name="serves" min="1" max="8">
+
+                <h3>Calorie Count <small>per serving</small></h3>
+
+                <!-- <label for="calorieCount"></label> -->
+                <input type="range" id="calorieCount" name="calorieCount" min="0" max="1000">
+
+                <h3>Difficulty</h3>
+
+                    <select id="difficulty">
+                    <option selected value="">Select Here</option>
+                    <option value="Easy-peasy"> Easy-peasy </option>
+                    <option value="A challenge"> A challenge </option>
+                    <option value="Experts only!"> Experts only! </option>
+                    </select>
+
+                <h3>Contains:</h3>
+
+                <input list="contains"/>
+                
+                <datalist id="contains">
+                    <option value="Chicken">
+                    <option value="Beef">
+                    <option value="Pork">
+                    <option value="Chorizo">
+                    <option value="Aubergine">
+                    <option value="Pasta">
+                    <option value="Rice">
+                </datalist> <br>
+                  
+
+                <input type="submit" value="Find my recipes!">
+
+            </form>
+
+        </section>
+
+        <section class="content-wrapper recipeList">
+
+            <table>
+                <thead>
+                  <tr>
+                    <th>Recipe Name</th>
+                    <th>Is Vegan?</th>
+                    <th>Is Vegetarian?</th>
+                    <th>Cook Time</th>
+                    <th>Serves</th>
+                    <th>Calorie Count</th>
+                    <th>Difficulty</th>
+                    <th>Contains</th>
+                  </tr>
+                </thead>
+
+                <!-- <tbody data-sheetdb-url="https://sheetdb.io/api/v1/gijv3lqpyfek0" -->
+                        data-sheetdb-sort-by="recipeName"
+                        data-sheetdb-sort-order="desc">
+                    <tr>
+                    <td>{{recipeName}}</td>
+                    <td>{{isVegan}}</td>
+                    <td>{{isVegetarian}}</td>
+                    <td>{{cookTime}}</td>
+                    <td>{{serves}}</td>
+                    <td>{{calorieCount}}</td>
+                    <td>{{difficulty}}</td>
+                    <td>{{contains}}</td>
+                    </tr>
+                </tbody>
+
+
+                </table>
+
+        </section>
+
+
+        <footer>
+            <picture class="content-wrapper"> 
+              <img src="./img/Logo_words_white.png">
+            </picture>
+      
+            <div class="socials content-wrapper">
+      
+      <img src="./img/twitter.png" alt="twitter">
+      <div class="footerGutter"></div>
+      <img src="./img/facebook.png" alt="facebook">
+    </div>
+    <div>
+        <p class="copyright content-wrapper">Copyright 2020. Calorie Rocket.</p>
+  </div>
+      </footer>
+    </div>
+    <script src="./js/recipeResult.js"></script>
+</body>
+</html>

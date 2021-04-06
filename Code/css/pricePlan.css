@@ -1,0 +1,124 @@
+.Plans {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pricePlan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    background: linear-gradient(#fda766, #fdb777);
+    box-shadow: 5px 5px 13px 5px #FFC06A;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    margin-right: 2.5rem;
+    margin-left: 2.5rem;
+}
+.Plans picture {
+    height: 10rem;
+    width: 10rem;
+    margin: 0 auto;
+
+}
+
+/* .pricePlanLogo {
+    margin-bottom: 4rem;
+} */
+
+.Plans h3 {
+    text-align: center;
+    font-size: 5rem;
+    color: white;
+    margin-bottom: 0;
+    margin-top: 3rem;
+}
+
+.Plans li {
+        color: white;
+        line-height: 2rem;
+        text-indent: 0.5rem;
+        font-size: larger;
+}
+
+.basicPrice li:first-of-type {
+list-style-type: "🧑‍🍳";
+}
+
+.basicPrice li:nth-of-type(2) {
+    list-style-type: "🗞";
+    }
+
+.basicPrice li:nth-of-type(3) {
+    list-style-type: "📆";
+    }
+
+.proPrice li:nth-of-type(1) {
+    list-style-type: "🙌";
+    }
+
+.proPrice li:nth-of-type(2) {
+    list-style-type: "📝";
+    }
+
+.proPrice li:nth-of-type(3) {
+    list-style-type: "🍽";
+    }
+
+.price {
+    padding-top: 1.5rem;
+}
+
+.price a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: purple;
+    border-radius: 5%;
+    margin-left: 1.625rem;
+    margin-right: 1.625rem;
+    width: 20rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  
+  }
+  
+  
+  .price a:hover {
+    color: var(--blue-for-hovered-links);
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .Plans {
+    display: block;
+    }
+
+    .pricePlanContainer ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricePlanContainer ul li {
+        height: 3rem;
+        width: 20rem;
+        line-height: 2rem;
+        text-indent: 2rem;
+    }
+    
+
+    .pricePlan {
+        width: 90%;
+        margin: 0 auto;
+        box-shadow: unset;
+    }
+
+    .basicPrice {
+        margin-bottom: 3rem;
+    }
+
+
+  }

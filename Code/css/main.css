@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #fff;
+  --calorieRocketPurple: #A560E8;
+  --calorieRocketRed: #F56565;
+  --calorieRocketGreen: #59F033;
+  --blue-for-links: #06748a;
+  --blue-for-hovered-links: #033641;
+  --content-wrapper-width: 1170px;
+}
+
+
+body {
+  font-family: 'Cabin', sans-serif;
+  font-size: 100%;
+  background: linear-gradient(var(--calorieRocketPurple), var(--calorieRocketRed));
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+.content {
+  width: 100%;
+}
+
+.content-wrapper {
+  max-width: var(--content-wrapper-width);
+  margin: 0 auto;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+picture {
+  display: block;
+}

@@ -1,0 +1,36 @@
+footer {
+    font-size: 9px;
+    font-weight: 300;
+    text-align: center;
+    margin: 0px;
+    background-color: #121212;
+  }
+
+  footer picture {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      transform: scale(0.5);
+  }
+  
+  .socials {
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.75);
+    margin: 0 auto;
+  }
+
+  .footerGutter {
+      width: 3rem;
+  }
+  
+  
+  .copyright {
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: white;
+  text-align: center;
+  }

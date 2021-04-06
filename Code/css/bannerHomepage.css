@@ -1,0 +1,238 @@
+.carousel
+{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    height: 50rem;
+}
+
+.cb-slideshow,
+.cb-slideshow:after { 
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0; 
+}
+
+/* .cb-slideshow:after { 
+    content: '';
+    background: transparent url(../img/Logo_words_black.png) repeat top left; 
+}  */
+
+.cb-slideshow li {
+list-style: none;
+}
+
+
+.cb-slideshow li span.bannerImages { 
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 36s linear infinite 0s; 
+    filter: blur(2px);
+}
+.cb-slideshow li div { 
+    z-index: 2;
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    top: 20rem;
+    text-align: center;
+    opacity: 0;
+    color: #fff;
+    animation: titleAnimation 36s linear infinite 0s; 
+}
+.cb-slideshow li div p { 
+    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+    font-size: 240px;
+    padding: 0;
+    line-height: 200px;
+    width: 100%;
+    white-space: nowrap;
+    font-weight: 800;
+    color: #e0e0e0;
+}
+
+
+
+.cb-slideshow li:nth-child(1) span.bannerImages { 
+    background-image: 
+        linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ), url(../img/alex-munsell-Yr4n8O_3UPc-unsplash.jpg);
+}
+.cb-slideshow li:nth-child(2) span.bannerImages { 
+    background-image: 
+        linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ), url(../img/asnim-ansari-SqYmTDQYMjo-unsplash.jpg);
+    animation-delay: 6s; 
+}
+.cb-slideshow li:nth-child(3) span.bannerImages { 
+    background-image:
+        linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ), url(../img/brooke-lark-HlNcigvUi4Q-unsplash.jpg);
+    background-position: top;
+    animation-delay: 12s; 
+}
+.cb-slideshow li:nth-child(4) span.bannerImages { 
+    background-image: 
+        linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ), url(../img/davide-cantelli-jpkfc5_d-DI-unsplash.jpg);
+    animation-delay: 18s; 
+    
+}
+.cb-slideshow li:nth-child(5) span.bannerImages { 
+    background-image: 
+        linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ), url(../img/lidye-1Shk_PkNkNw-unsplash.jpg);
+    background-position: bottom;
+    animation-delay: 24s; 
+}
+.cb-slideshow li:nth-child(6) span.bannerImages { 
+    background-image: 
+        linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ), url(../img/whitney-wright-6G98hiCJETA-unsplash.jpg);
+    background-position: bottom;
+    animation-delay: 30s; 
+}
+
+.cb-slideshow li:nth-child(2) div { 
+    animation-delay: 6s; 
+}
+.cb-slideshow li:nth-child(3) div { 
+    animation-delay: 12s; 
+}
+.cb-slideshow li:nth-child(4) div { 
+    animation-delay: 18s; 
+}
+.cb-slideshow li:nth-child(5) div { 
+    animation-delay: 24s; 
+}
+.cb-slideshow li:nth-child(6) div { 
+    animation-delay: 30s; 
+}
+
+@keyframes imageAnimation { 
+    0% { opacity: 0; animation-timing-function: ease-in; }
+    8% { opacity: 1; animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+@keyframes titleAnimation { 
+    0% { opacity: 0 }
+    8% { opacity: 1 }
+    17% { opacity: 1 }
+    19% { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+.cta {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1000;
+    align-self: center;
+    margin-left: 10rem;
+    margin-bottom: 10rem;
+    margin-top: 5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background: linear-gradient(rgba(165, 96, 232, 0.7),rgba(245, 101, 101, 0.7)) ;
+    border-radius: 5%;
+    text-align: center;
+}
+
+.cta h1 {
+    font-size: 2.5rem;
+  }
+  
+  .cta p {
+    font-size: 1.5rem;
+    width: 35.3rem;
+  }
+  
+  .cta a {
+    display: block;
+    opacity: 2;
+    height: 3rem;
+    width: 7rem;
+    margin: 0 auto;
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    background: linear-gradient(#fda766, #fdb777);
+    border-radius: 5%;
+    padding-top: 1rem;
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .cb-slideshow li div { 
+    display: none;
+    }
+
+    .cb-slideshow p {
+    width: 0;
+    display: none;
+    }
+
+    .carousel {
+        position: relative;
+    }
+
+    .cta {
+    position: absolute;
+    margin: 0 auto;
+    height: 20rem;
+    width: 20rem;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    margin-top: 2.5rem;
+    background: linear-gradient(rgba(165, 96, 232, 1),rgba(245, 101, 101, 1)) ;
+    }
+
+    .cta h1 {
+        padding-bottom: 1rem;
+      }
+
+    .cta p {
+        display: none;
+    }
+
+    .cta a {
+        padding-top: 1rem;
+      }
+
+
+
+
+  }
