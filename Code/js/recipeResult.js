@@ -135,36 +135,22 @@ console.log(form);
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     console.log("Form has been submitted!");
-    
-
-    var maxCook = document.getElementsByName('maxCook');
-
-    for (var i = 0, length = maxCook.length; i < length; i++) {
-        if (maxCook[i].checked) {
-          break;
-        }
-    }
-
-    var maxCal = document.getElementsByName('maxCal');
-
-    for (var i = 0, length = maxCal.length; i < length; i++) {
-        if (maxCal[i].checked) {
-          break;
-        }
-    }
 
     var serves = document.getElementById('serves').value
     var difficulty = document.getElementById('difficulty').value
     var vegetarian = document.getElementById('vegetarian').checked
     var vegan = document.getElementById('vegan').checked
-    // var contains = document.getElementById('contains').value
+    var maxCook = document.querySelector('input[name="maxCook"]:checked').value;
+    var maxCal = document.querySelector('input[name="maxCal"]:checked').value;
+    
+    form.addEventListener("submit", () => {
+        var sheetQuery = document.querySelector("tbody");
+        sheetQuery.setAttribute("data-sheetdb-search", "isVegetarian=" + vegetarian + "&isVegan=" + vegan + "&cookIsUnder" + maxCook + "=TRUE" + "&serves=" + serves + "&isUnder" + maxCal + "=TRUE" + "&difficulty=" + difficulty + "&casesensitive=false");
+    })
+
 
     
-    form.addEventListener("submit", (event) => {
-        var sheetQuery = document.querySelector("tbody");
-        sheetQuery.setAttribute("data-sheetdb-search", "isVegetarian=" + vegetarian + "&isVegan=" + vegan + "&cookIsUnder" + maxCook[i].value + "=TRUE" + "&serves=" + serves + "&isUnder" + maxCal[i].value + "=TRUE" + "&difficulty=" + difficulty + "&casesensitive=false");
-    })
-    
+});
 
 // https://sheetdb.io/api/v1/gijv3lqpyfek0/search?serves=4&casesensitive=true < this works
 
@@ -172,7 +158,7 @@ form.addEventListener("submit", (event) => {
 // "data-sheetdb-url", "https://sheetdb.io/api/v1/gijv3lqpyfek0/search?isVegetarian=" + vegetarian + "&isVegan=" + vegan + "&cookIsUnder" + maxCook[i].value + "=TRUE" + "&serves=" + serves + "&isUnder" + maxCal[i].value + "=TRUE" + "&difficulty=" + difficulty + "&casesensitive=false"
 
 
-});
+
 
 
 
