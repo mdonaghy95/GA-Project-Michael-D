@@ -15,6 +15,8 @@
 // JS selects form action
 // JS appends to value of data-sheetdb-url
 
+
+
 document.addEventListener("DOMContentLoaded", sheetdb_upd);
 document.addEventListener("submit", sheetdb_upd);
 var sheetdb_template_cache = [],
@@ -134,36 +136,75 @@ form.addEventListener("submit", (event) => {
     event.preventDefault();
     console.log("Form has been submitted!");
     
+
+    var maxCook = document.getElementsByName('maxCook');
+
+    for (var i = 0, length = maxCook.length; i < length; i++) {
+        if (maxCook[i].checked) {
+          break;
+        }
+    }
+
+    var maxCal = document.getElementsByName('maxCal');
+
+    for (var i = 0, length = maxCal.length; i < length; i++) {
+        if (maxCal[i].checked) {
+          break;
+        }
+    }
+
+    var serves = document.getElementById('serves').value
+    var difficulty = document.getElementById('difficulty').value
     var vegetarian = document.getElementById('vegetarian').checked
     var vegan = document.getElementById('vegan').checked
-    var maxCook = document.getElementById('maxCook').value
-    var serves = document.getElementById('serves').value
-    var calorieCount = document.getElementById('calorieCount').value 
-    var difficulty = document.getElementById('difficulty').value
-    var contains = document.getElementById('contains').value
+    // var contains = document.getElementById('contains').value
 
     
     form.addEventListener("submit", (event) => {
         var sheetQuery = document.querySelector("tbody");
-        sheetQuery.setAttribute("data-sheetdb-url", "https://sheetdb.io/api/v1/gijv3lqpyfek0/search?isVegetarian=" + vegetarian + "&isVegan=" + vegan + "&maxCook<=" + maxCook + "&serves=" + serves + "&calorieCount<=" + calorieCount + "&difficulty=" + difficulty + "&casesensitive=false");
+        sheetQuery.setAttribute("data-sheetdb-search", "isVegetarian=" + vegetarian + "&isVegan=" + vegan + "&cookIsUnder" + maxCook[i].value + "=TRUE" + "&serves=" + serves + "&isUnder" + maxCal[i].value + "=TRUE" + "&difficulty=" + difficulty + "&casesensitive=false");
     })
-
-   
-
     
 
 // https://sheetdb.io/api/v1/gijv3lqpyfek0/search?serves=4&casesensitive=true < this works
 
     // document.getElementsByTagName("tbody").setAttribute("data-sheetdb-url", "https://sheetdb.io/api/v1/gijv3lqpyfek0/search?serves=" + serves + "&age=22&casesensitive=true")
+// "data-sheetdb-url", "https://sheetdb.io/api/v1/gijv3lqpyfek0/search?isVegetarian=" + vegetarian + "&isVegan=" + vegan + "&cookIsUnder" + maxCook[i].value + "=TRUE" + "&serves=" + serves + "&isUnder" + maxCal[i].value + "=TRUE" + "&difficulty=" + difficulty + "&casesensitive=false"
+
 
 });
 
+
+
+// FORM ENTRY CODE
+
+var formSubmit = document.getElementById('sheetdb-form');
+formSubmit.addEventListener("submit", e => {
+  e.preventDefault();
+  fetch(formSubmit.action, {
+      method : "POST",
+      body: new FormData(document.getElementById("sheetdb-form")),
+  }).then(
+      response => response.json()
+  ).then((html) => {
+    alert('Thanks for adding your recipe!')
+  });
+});
 
 
 // MY CODE BEGINS
 
 
 
+
+// let formSubmit = document.getElementById('sheet-db-form');
+// console.log(formSubmit);
+
+// formSubmit.addEventListener("submit", (event) => {
+//     event.preventDefault();
+//     console.log("Form has been submitted!");
+
+// })
 
 
 

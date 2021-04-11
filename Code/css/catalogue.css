@@ -1,0 +1,21 @@
+header {
+    margin-bottom: auto;
+}
+
+div .searchDisplay {
+    display: flex;
+    margin-top: 2rem;
+}
+
+.recipeList {
+    margin-top: 1.3rem;
+}
+
+@media screen and (max-width: 769px) {
+
+   div .searchDisplay {
+        display: block;
+        width: 80%;
+    }
+
+  }

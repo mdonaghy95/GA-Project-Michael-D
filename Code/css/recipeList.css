@@ -1,11 +1,27 @@
+.gutterDiv {
+    width: 3rem;
+}
+
 table,
 td {
-    border: 1px solid #333;
+    border: 1px solid var(--calorieRocketPurple);;
+    background: linear-gradient(#fda766, #fdb777);
 }
 
 thead,
 tfoot {
-    background-color: #333;
-    color: #fff;
+    background: linear-gradient(#fda766, #fdb777);
+    color: var(--calorieRocketPurple);
+    font-weight: 900;
 }
+
+thead {
+    padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+}
+
+td {
+    text-align: center;
+    padding: 1rem;
+}
+
 

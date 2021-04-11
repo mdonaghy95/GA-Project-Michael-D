@@ -1,0 +1,84 @@
+h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    
+}
+
+h3 {
+    margin: 2rem;
+    border-top: 0.1rem dotted var(--calorieRocketPurple);
+    padding-top: 2rem;
+}
+
+.searchBox {
+    text-align: center;
+    background: linear-gradient(#fda766, #fdb777);
+    padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+    opacity: 90%;
+    max-height: 70rem;
+    /* box-shadow: 5px 5px 13px 5px #FFC06A; */
+}
+
+.searchBox input[type=radio] {
+    display: 
+}
+
+.searchBox label {
+    padding-top: 0.3rem;
+}
+
+.searchBox input:last-of-type {
+    margin-top: 2rem;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    border-radius: 5%;
+    border-style: none;
+    color: white;
+    background: linear-gradient(var(--calorieRocketPurple), var(--calorieRocketRed));
+}
+
+.searchBox input:last-of-type:hover {
+    color: var(--blue-for-hovered-links);
+}
+
+.radioDivFix {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: -2rem;
+    
+}
+
+.radioSpanFix {
+    display: flex;
+    flex-direction: column;
+}
+
+.radioSpanFix label {
+    padding-top: 1rem;
+}
+
+.rangeDivFix {
+    display: flex;
+    flex-direction: column;
+    margin-top: -3rem;
+}
+
+.checkboxDivFix {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* margin-top: -2rem; */
+}
+
+.checkboxSpanFix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.checkboxSpanFix label {
+    margin-bottom: -1rem;
+
+}
+
+

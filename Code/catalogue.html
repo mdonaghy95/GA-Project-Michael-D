@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="./css/headerHomepage.css" />
     <link rel="stylesheet" href="./css/recipeList.css" />
     <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/catalogue.css" />
+    <link rel="stylesheet" href="./css/getForm.css" />
+    <link rel="stylesheet" href="./css/postForm.css" />
     <title>Calorie Rocket: Catalogue</title>
 </head>
 <body>
@@ -33,69 +36,92 @@
               </div>
         </header>
 
+        <div class="content-wrapper searchDisplay">
+
         <section class="content-wrapper searchBox">
 
             <h2>Find your next meal!</h2>
 
-            <form action="" method="GET" id="catalogueForm">
-
-                <h3>Dietary Preferences?</h3>
-
-                    <label for="vegetarian">Vegetarian</label>
-                    <input type="checkbox" name="vegetarian" id="vegetarian" value="Vegetarian"> <br>
+            <form action="" method="GET" id="catalogueForm" class="getForm">
                     
-                    <label for="vegan">Vegan</label>
-                    <input type="checkbox" name="vegan" id="vegan" value="Vegan"> <br>
+                <h3>Max. Cooking Time <small>(mins)</small></h3>
+<div class="radioDivFix">
+                <div class="radioSpanFix">
+                    <input type="radio" id="maxCook30" name="maxCook" value="30">
+                    <label for="maxCook">30</label>
+                </div>
+
+                  <div class="radioSpanFix">
+                    <input type="radio" id="maxCook60" name="maxCook" value="60">
+                    <label for="maxCook">60</label>
+                  </div>
+                  
+
+                    <div class="radioSpanFix">
+                      <input type="radio" id="maxCook90" name="maxCook" value="90">
+                      <label for="maxCook">90</label>
+                    </div>
+
+                    <div class="radioSpanFix">
+                      <input type="radio" id="maxCook120" name="maxCook" value="120">
+                      <label for="maxCook">120</label>
+                  </div>
+
+                  </div>
                     
-                <h3>Max. Cooking Time</h3>
 
+                <h3>Max. Calorie Count <small>per serving</small></h3>
 
-                    <input type="radio" id="maxCook" name="maxCook" value="max30">
-                    <label for="maxCook">30 minutes</label>
-
-                    <input type="radio" id="maxCook" name="maxCook" value="max60">
-                    <label for="maxCook">60 minutes</label>
-
-                    <input type="radio" id="maxCook" name="maxCook" value="max90">
-                    <label for="maxCook">90 minutes</label>
-
-                    <input type="radio" id="maxCook" name="maxCook" value="max120">
-                    <label for="maxCook">120 minutes</label>
-                    
+                <div class="radioDivFix">
+                  <div class="radioSpanFix">
+                    <input type="radio" id="maxCal250" name="maxCal" value="250">
+                    <label for="maxCal">250</label>
+                  </div>
+                  <div class="radioSpanFix">
+                    <input type="radio" id="maxCal500" name="maxCal" value="500">
+                    <label for="maxCal">500</label>
+                  </div>
+                  <div class="radioSpanFix">
+                    <input type="radio" id="maxCal750" name="maxCal" value="750">
+                    <label for="maxCal">750</label>
+                  </div>
+                  <div class="radioSpanFix">
+                    <input type="radio" id="maxCal1000" name="maxCal" value="1000">
+                    <label for="maxCal">1000</label>
+                  </div>
+                </div>
 
                 <h3>Serves</h3>
 
-                <!-- <label for="serves">Serves</label> -->
-                <input type="range" id="serves" name="serves" min="1" max="8">
-
-                <h3>Calorie Count <small>per serving</small></h3>
-
-                <!-- <label for="calorieCount"></label> -->
-                <input type="range" id="calorieCount" name="calorieCount" min="0" max="1000">
+<div class="rangeDivFix">
+                <input type="range" id="serves" name="serves" value="4" min="1" max="8" oninput="this.nextElementSibling.value = this.value">
+                <output>4</output>
+              </div>
 
                 <h3>Difficulty</h3>
 
-                    <select id="difficulty">
+                    <select id="difficulty" required>
                     <option selected value="">Select Here</option>
                     <option value="Easy-peasy"> Easy-peasy </option>
                     <option value="A challenge"> A challenge </option>
                     <option value="Experts only!"> Experts only! </option>
                     </select>
 
-                <h3>Contains:</h3>
+                    <h3>Dietary Preferences?</h3>
 
-                <input list="contains"/>
-                
-                <datalist id="contains">
-                    <option value="Chicken">
-                    <option value="Beef">
-                    <option value="Pork">
-                    <option value="Chorizo">
-                    <option value="Aubergine">
-                    <option value="Pasta">
-                    <option value="Rice">
-                </datalist> <br>
+                    <div class="checkboxDivFix">
+
+                    <div class="checkboxSpanFix">
+                      <label for="vegetarian">Vegetarian</label>
+                      <input type="checkbox" name="vegetarian" id="vegetarian" value="Vegetarian">
+                    </div>
+                    
+                    <div class="checkboxSpanFix">
+                    <label for="vegan">Vegan</label>
+                    <input type="checkbox" name="vegan" id="vegan" value="Vegan">
+                  </div>
                   
+                    </div>
 
                 <input type="submit" value="Find my recipes!">
 
@@ -103,34 +129,40 @@
 
         </section>
 
+        <div class="gutterDiv">
+
+        </div>
+
         <section class="content-wrapper recipeList">
 
             <table>
                 <thead>
                   <tr>
                     <th>Recipe Name</th>
+                    <th>Cook Time (mins)</th>
+                    <th>Serves</th>
+                    <th>Calorie Count (per serving)</th>
                     <th>Is Vegan?</th>
                     <th>Is Vegetarian?</th>
-                    <th>Cook Time</th>
-                    <th>Serves</th>
-                    <th>Calorie Count</th>
                     <th>Difficulty</th>
-                    <th>Contains</th>
                   </tr>
                 </thead>
 
-                <!-- <tbody data-sheetdb-url="https://sheetdb.io/api/v1/gijv3lqpyfek0" -->
+                <!-- REMEMBER TO TAKE THE 1 OUT OF THE URL TO TEST!!! -->
+
+                <tbody data-sheetdb-url="https://sheetdb.io/api/v1/gijv3lqpyfek0"
+                        data-sheetdb-search=""
                         data-sheetdb-sort-by="recipeName"
-                        data-sheetdb-sort-order="desc">
+                        data-sheetdb-sort-order="desc"
+                        data-sheetdb-limit="23">
                     <tr>
                     <td>{{recipeName}}</td>
-                    <td>{{isVegan}}</td>
-                    <td>{{isVegetarian}}</td>
                     <td>{{cookTime}}</td>
                     <td>{{serves}}</td>
                     <td>{{calorieCount}}</td>
+                    <td class="veganData">{{isVegan}}</td>
+                    <td class="vegetarianData">{{isVegetarian}}</td>
                     <td>{{difficulty}}</td>
-                    <td>{{contains}}</td>
                     </tr>
                 </tbody>
 
@@ -139,6 +171,64 @@
 
         </section>
 
+      </div>
+
+      <div class="contentSeperator">
+        <p class="postFormHeading">Tell us your favourites!</p>
+      </div>
+
+        <section class="content-wrapper submitDisplay">
+
+
+          <form
+          method="POST"
+          action="https://sheetdb.io/api/v1/gijv3lqpyfek0?sheet=FormCollection"
+          id="sheetdb-form" class="postForm">
+
+<div class="postFormWrapper">
+
+          <label>Recipe Name:</label> 
+          <input name="data[recipeNamePost]">
+
+            <label>Cooking Time (mins):</label> 
+            <input required type="number" name="data[cookTimePost]" min="5" max="120">
+
+            <label>Calorie Count per serving?:</label> 
+            <input required type="number" name="data[calorieCountPost]" min="50" max="1000">
+
+            <label>Serves:</label> 
+            <input required type="number" min="1" max="8" name="data[servesPost]">
+
+            <label>Difficulty:</label> 
+            <select required name="data[difficultyPost]">
+              <option selected value="">Select Here</option>
+              <option value="Easy-peasy"> Easy-peasy </option>
+              <option value="A challenge"> A challenge </option>
+              <option value="Experts only!"> Experts only! </option>
+              </select>
+
+            <label>Vegan?:</label> 
+            <select required name="data[isVeganPost]">
+              <option selected value="">Select Here</option>
+              <option value="TRUE"> Yes </option>
+              <option value="FALSE"> No </option>
+              </select>
+
+            <label>Vegetarian?:</label> 
+            <select required name="data[isVegetarianPost]">
+              <option selected value="">Select Here</option>
+              <option value="TRUE"> Yes </option>
+              <option value="FALSE"> No </option>
+              </select>
+
+            <button type="submit">Submit</button>
+
+          </div>
+        </form>
+
+     
+
+        </section>
 
         <footer>
             <picture class="content-wrapper"> 
@@ -156,6 +246,24 @@
   </div>
       </footer>
     </div>
-    <script src="./js/recipeResult.js"></script>
+
+    <script src="./js/recipeResult.js">
+    </script>
+
+<!-- <script>
+  var form = document.getElementById('sheetdb-form');
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+    }).then(
+        response => response.json()
+    ).then((html) => {
+      alert('Thanks for adding your recipe!')
+    });
+  });
+</script> -->
+
 </body>
 </html>
